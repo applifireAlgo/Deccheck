@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.1" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+
+
+	<persistence-unit name="project" transaction-type="RESOURCE_LOCAL">
+		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+		<jar-file>lib/spartan-healthmeter-1.0.jar</jar-file>
+		<jar-file>lib/spartan-shield-1.0.jar</jar-file>
+		<jar-file>lib/spartan-sprinkler-1.0.jar</jar-file>
+		<jar-file>lib/athena-query-1.0.jar</jar-file>
+		<jar-file>lib/athena-report-1.0.jar</jar-file>
+		<jar-file>lib/athena-cloud-1.0.jar</jar-file>
+		<jar-file>lib/athena-config-1.0.jar</jar-file>
+		<jar-file>lib/athena-core-1.0.jar</jar-file>
+		<jar-file>lib/athena-framework-1.0.jar</jar-file>
+		<jar-file>lib/athena-rule-engine-1.0.jar</jar-file>
+		<jar-file>lib/athena-search-engine-1.0.jar</jar-file>
+		<jar-file>lib/athena-data-endpoint-orchestration-1.0.jar</jar-file>
+		<properties>
+			<property name="eclipselink.session.customizer" value="com.athena.config.server.uuidGenerator.UUIDGenerator"/>
+			<property name="eclipselink.ddl-generation" value="none"/>
+			<property name="eclipselink.logging.level" value="FINEST"/>
+			<property name="eclipselink.weaving" value="false"/>
+			<property name="eclipselink.jdbc.allow-native-sql-queries" value="true"/>
+			<property name="eclipselink.deploy-on-startup" value="true"/>
+
+			<property name="eclipselink.connection-pool.default.initial" value="15"/>
+			<property name="eclipselink.connection-pool.default.min" value="6"/>
+			<property name="eclipselink.connection-pool.default.max" value="10"/>
+
+
+		<property name="eclipselink.dialect" value="org.eclipse.persistence.platform.database.MySQLPlatform"/>
+        <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/project"/>
+        <property name="javax.persistence.jdbc.user" value="project"/>
+        <property name="javax.persistence.jdbc.password" value="project"/>
+        <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+        </properties>
+	<class>project.app.shared.location.Timezone</class>
+    <class>project.app.shared.location.Language</class>
+    <class>project.app.shared.location.Country</class>
+    <class>project.app.shared.location.Currency</class>
+    <class>project.app.shared.location.State</class>
+    <class>project.app.shared.location.Region</class>
+    <class>project.app.shared.location.District</class>
+    <class>project.app.shared.location.City</class>
+    <class>project.app.shared.location.Taluka</class>
+    <class>project.app.shared.location.Village</class>
+    <class>project.app.shared.location.AddressType</class>
+    <class>project.app.shared.location.Address</class>
+    <class>project.app.shared.location.AddressExtended</class>
+    <class>project.app.shared.contacts.ContactType</class>
+    <class>project.app.shared.contacts.CommunicationGroup</class>
+    <class>project.app.shared.contacts.CommunicationType</class>
+    <class>project.app.shared.contacts.Gender</class>
+    <class>project.app.shared.contacts.Title</class>
+    <class>project.app.shared.contacts.CoreContacts</class>
+    <class>project.app.shared.contacts.CommunicationData</class>
+    <class>project.app.shared.authentication.PasswordAlgo</class>
+    <class>project.app.shared.authentication.PasswordPolicy</class>
+    <class>project.app.shared.authentication.Question</class>
+    <class>project.app.shared.authentication.UserAccessLevel</class>
+    <class>project.app.shared.authentication.UserAccessDomain</class>
+    <class>project.app.shared.authentication.User</class>
+    <class>project.app.shared.authentication.Login</class>
+    <class>project.app.shared.authentication.LoginSession</class>
+    <class>project.app.shared.authentication.PassRecovery</class>
+    <class>project.app.shared.authentication.UserData</class>
+    <class>project.app.shared.authentication.SessionData</class>
+    <class>project.app.shared.authorization.Roles</class>
+    <class>project.app.shared.authorization.AppMenus</class>
+    <class>project.app.shared.authorization.RoleMenuBridge</class>
+    <class>project.app.shared.authorization.UserRoleBridge</class>
+    <class>project.app.shared.customers.AppCustomerType</class>
+    <class>project.app.shared.customers.AppCustomerCategory</class>
+    <class>project.app.shared.customers.AppCustomer</class>
+    </persistence-unit>
+
+</persistence>

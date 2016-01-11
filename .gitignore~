@@ -1,0 +1,6 @@
+*.war
+*.txt
+*.cf
+*.log	
+.gitignore
+*.pdf
